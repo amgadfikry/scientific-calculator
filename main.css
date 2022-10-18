@@ -1,0 +1,98 @@
+/*root style*/
+:root{
+    font-size: calc( 0.5em + 1vw);
+    --screen-gray:rgb(230, 230, 230);
+    --btn-bg-gray:rgb(230, 230, 230);
+    --body-white:rgb(245, 245, 245);
+    --scientific-btn:rgb(150, 150, 150);
+    --main-btn:rgb(56, 56, 56);
+    --blue-btn:rgb(57, 57, 236);
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Changa', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+
+/*body*/
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(45, 235, 209);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*calculator body*/
+.calculator{
+    overflow: hidden;
+    width: 500px;
+    height: 600px;
+    background-color: var(--body-white);
+    border-radius: 5px;
+    box-shadow: 1px 2px 30px 2px rgb(165, 164, 164);
+}
+
+/*calculator navbar*/
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+}
+.navbar .icon{
+    font-size: 1.2rem;
+    display: block;
+    color: var(--main-btn);
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.nav-item .icon:hover{
+    background-color: var(--btn-bg-gray);
+}
+.history{
+    margin-left: auto;
+}
+.menu{
+    position: relative;
+}
+.menu-list{
+    background-color: var(--body-white);
+    border-radius: 7px;
+    width: 12vw;
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    box-shadow: 1px 2px 30px 2px rgb(190, 190, 190);
+    overflow: hidden;
+    transition: all 0.3s;
+    transform-origin: top right;
+    transform: scale(0);
+}
+.active-menu{
+    transform: scale(1);
+}
+.menu-list li a{
+    transition: all 0.3s;
+    display: block;
+    padding: 5px 10px;
+    color: var(--main-btn);
+}
+.menu-list li :hover{
+    background-color: var(--btn-bg-gray);
+}
+
+/*calculator screen*/
+.screen{
+    background-color: var(--screen-gray);
+    height: 35%;
+    width: 100%;
+}
