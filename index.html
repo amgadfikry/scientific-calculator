@@ -14,6 +14,9 @@
 <body>
     <div class="calculator">
         <nav class="navbar">
+            <div class="dark-mode nav-item">
+                <i class="fa-solid fa-circle-half-stroke icon"></i>
+            </div>
             <div class="history nav-item">
                 <i class="fa-regular fa-clock icon"></i>
             </div>
@@ -25,7 +28,7 @@
                 <div class="menu-list">
                     <ul>
                         <li>
-                            <a href="#" class="menu-list-item">Scientific</a>
+                            <a href="#" class="menu-list-item switch-btn">Scientific</a>
                         </li>
                         <li>
                             <a href="#" class="menu-list-item">Setting</a>
@@ -35,11 +38,15 @@
             </div>
         </nav>
         <div class="screen">
-            <div class="main-screen"></div>
-            <div class="small-screen"></div>
+            <div class="main-screen">
+                <p>25</p>
+            </div>
+            <div class="small-screen">
+                <p>35</p>
+            </div>
         </div>
         <div class="buttons">
-            <div class="row">
+            <div class="row scientific-bar">
                 <div class="btn scientific sin">
                     sin
                 </div>
@@ -56,7 +63,7 @@
                     deg
                 </div>
             </div>
-            <div class="row">
+            <div class="row scientific-bar">
                 <div class="btn scientific log">
                     log
                 </div>
@@ -69,30 +76,30 @@
                 <div class="btn scientific right-paren">
                     )
                 </div>
-                <div class="btn scientific right-paren">
+                <div class="btn scientific inv">
                     inv
                 </div>
             </div>
             <div class="row">
-                <div class="btn scientific not">
-                    <i class="fa-light fa-exclamation"></i>
+                <div class="btn scientific scientific-btn not">
+                    <i class="fa-solid fa-exclamation"></i>
                 </div>
                 <div class="btn basic clear">
-                    <i class="fa-regular fa-c"></i>
+                    <i class="fa-solid fa-c"></i>
                 </div>
                 <div class="btn basic percentage">
-                    <i class="fa-regular fa-percent"></i>
+                    <i class="fa-solid fa-percent"></i>
                 </div>
                 <div class="btn basic delete">
-                    <i class="fa-regular fa-delete-left"></i>
+                    <i class="fa-solid fa-delete-left"></i>
                 </div>
                 <div class="btn basic four-calc divide">
-                    <i class="fa-regular fa-divide"></i>
+                    <i class="fa-solid fa-divide"></i>
                 </div>
             </div>
             <div class="row">
-                <div class="btn scientific exponent">
-                    ^
+                <div class="btn scientific scientific-btn exponent">
+                    <i class="fa-solid fa-angle-up"></i>
                 </div>
                 <div class="btn basic seven">
                     7
@@ -104,12 +111,12 @@
                     9
                 </div>
                 <div class="btn basic four-calc multiply">
-                    <i class="fa-regular fa-xmark"></i>
+                    <i class="fa-solid fa-xmark"></i>
                 </div>
             </div>
             <div class="row">
-                <div class="btn scientific root">
-                    <i class="fa-light fa-square-root"></i>
+                <div class="btn scientific scientific-btn root">
+                    <i class="fa-solid fa-square-root-variable"></i>
                 </div>
                 <div class="btn basic four">
                     4
@@ -121,12 +128,12 @@
                     6
                 </div>
                 <div class="btn basic four-calc minus">
-                    <i class="fa-regular fa-minus"></i>
+                    <i class="fa-solid fa-minus"></i>
                 </div>
             </div>
             <div class="row">
-                <div class="btn scientific pi">
-                    <i class="fa-light fa-pi"></i>
+                <div class="btn scientific scientific-btn pi">
+                    Pi
                 </div>
                 <div class="btn basic one">
                     1
@@ -138,11 +145,11 @@
                     3
                 </div>
                 <div class="btn basic four-calc plus">
-                    <i class="fa-regular fa-plus"></i>
+                    <i class="fa-solid fa-plus"></i>
                 </div>
             </div>
             <div class="row">
-                <div class="btn scientific constant">
+                <div class="btn scientific scientific-btn constant">
                     e
                 </div>
                 <div class="btn basic two-zero">
@@ -155,7 +162,7 @@
                     .
                 </div>
                 <div class="btn basic four-calc equal">
-                    <i class="fa-regular fa-equals"></i>
+                    <i class="fa-solid fa-equals"></i>
                 </div>
             </div>
         </div>

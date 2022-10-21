@@ -2,11 +2,15 @@
 :root{
     font-size: calc( 0.5em + 1vw);
     --screen-gray:rgb(230, 230, 230);
-    --btn-bg-gray:rgb(230, 230, 230);
+    --btn-bg-gray:rgb(219, 219, 219);
     --body-white:rgb(245, 245, 245);
     --scientific-btn:rgb(150, 150, 150);
     --main-btn:rgb(56, 56, 56);
-    --blue-btn:rgb(57, 57, 236);
+    --blue-btn:rgb(46, 150, 248);
+    --shadow-btn-dark:rgba(0,0,0,0.17);
+    --shadow-btn-light-1:rgba(255,255,255,0.15);
+    --shadow-btn-light-2:rgba(255,255,255,0.12);
+    --shadow-main:rgba(0,0,0,0.30);
 }
 *{
     box-sizing: border-box;
@@ -34,28 +38,46 @@ body{
 /*calculator body*/
 .calculator{
     overflow: hidden;
-    width: 500px;
-    height: 600px;
+    max-width: 600px;
     background-color: var(--body-white);
     border-radius: 5px;
-    box-shadow: 1px 2px 30px 2px rgb(165, 164, 164);
+    box-shadow: 9px 15px 30px -3px rgba(0, 0, 0, 0.3);
+    width: 250px;
+    height: 350px;
+}
+
+/*responsive design*/
+@media (min-width:576px){
+    .calculator{
+        width: 350px;
+        height: 450px;
+    }
+}
+@media (min-width:768px){
+    .calculator{
+        width: 500px;
+        height: 600px;
+    }
 }
 
 /*calculator navbar*/
 .navbar{
     display: flex;
+    height: 5%;
     align-items: center;
-    padding: 0px 15px;
+    padding: 10px 10px;
+    box-shadow:inset 0 -0.6em 1em -0.35em var(--shadow-btn-dark),
+                inset 0 0.6em 2em -0.3em var(--shadow-btn-light-1),
+                inset 0 0 0em 0.05em var(--shadow-btn-light-2);
 }
 .navbar .icon{
-    font-size: 1.2rem;
     display: block;
     color: var(--main-btn);
-    padding: 10px 15px;
+    padding: 5px 10px;
     cursor: pointer;
-    transition: all 0.2s;
+
 }
-.nav-item .icon:hover{
+.nav-item .icon:active{
     background-color: var(--btn-bg-gray);
 }
 .history{
@@ -67,13 +89,12 @@ body{
 .menu-list{
     background-color: var(--body-white);
     border-radius: 7px;
-    width: 12vw;
     position: absolute;
     top: 100%;
     right: 50%;
-    box-shadow: 1px 2px 30px 2px rgb(190, 190, 190);
+    box-shadow: 9px 15px 16px -3px var(--shadow-main);
     overflow: hidden;
-    transition: all 0.3s;
+    transition: all 0.15s;
     transform-origin: top right;
     transform: scale(0);
 }
@@ -81,12 +102,12 @@ body{
     transform: scale(1);
 }
 .menu-list li a{
-    transition: all 0.3s;
     display: block;
-    padding: 5px 10px;
+    padding: 5px 20px 5px 10px;
     color: var(--main-btn);
+    user-select: none;
 }
-.menu-list li :hover{
+.menu-list li :active{
     background-color: var(--btn-bg-gray);
 }
 
@@ -95,4 +116,97 @@ body{
     background-color: var(--screen-gray);
     height: 35%;
     width: 100%;
+    padding: 0px 20px;
+    user-select: none;
 }
+.main-screen{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.main-screen p{
+    margin-left: auto;
+    color: var(--main-btn);
+    font-size: 2.5rem;
+    direction: rtl;
+    overflow: hidden;
+}
+.small-screen{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: flex-end;
+}
+.small-screen p{
+    margin-left: auto;
+    color: var(--scientific-btn);
+    font-size: 1.5rem;
+    direction: rtl;
+    overflow: hidden;
+}
+
+/*calculator buttons style*/
+.buttons{
+    height: 60.1%;
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    
+}
+.btn{
+    font-size: 1rem;
+    flex: 1 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-btn);
+    cursor: pointer;
+    user-select: none;
+    box-shadow:inset 0 -0.6em 1em -0.35em var(--shadow-btn-dark),
+                inset 0 0.6em 2em -0.3em var(--shadow-btn-light-1),
+                inset 0 0 0em 0.05em var(--shadow-btn-light-2);
+    background-color: var(--body-white);
+}
+.btn:active{
+    box-shadow:inset 0 0.6em 2em -0.3em var(--shadow-btn-dark),inset 0 0 0em 0.05em var(--shadow-btn-light-2);
+}
+.scientific{
+    color: var(--scientific-btn);
+    font-weight: 400;
+}
+.four-calc{
+    background-color:var(--btn-bg-gray) ;
+}
+.equal{
+    background-color: var(--blue-btn);
+    color: white;
+}
+.basic{
+    font-weight: 600;
+}
+
+/*style javascript classes*/
+.scientific-btn{
+    transition: all 0.3s;
+    flex: 0 0 0;
+    font-size: 0%;
+}
+.scientific-btn-active{
+    flex: 1 0 10%;
+    font-size: 1rem;
+}
+.scientific-bar{
+    transition: all 0.3s;
+    flex: 0 0 0;
+    font-size: 0%;
+}
+.scientific-bar-active{
+    flex: 1;
+    font-size: 1rem;
+}
+
